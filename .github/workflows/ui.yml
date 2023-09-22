@@ -22,9 +22,10 @@ jobs:
         npm run build
 
     - name: Upload to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      uses: SamKirkland/FTP-Deploy-Action@4.3.4
       with:
         server: www360.your-server.de
+        protocol: ftps
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: build/
