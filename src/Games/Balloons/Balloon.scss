@@ -1,0 +1,16 @@
+
+.balloon {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background-image: url("/src/assets/balloon.svg");
+  background-size: cover;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+
+  span {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+}
