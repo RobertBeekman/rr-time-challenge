@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 
 import './App.scss'
+import {Balloons} from "./Games/Balloons/Balloons.tsx";
 
 function App() {
     const [date, setDate] = useState(new Date());
@@ -17,6 +18,7 @@ function App() {
             <header className="App-header">
                 <p>
                     R&R Time Challenge Template 😀
+                    <Balloons></Balloons>
                 </p>
                 <b>{date.toUTCString()}</b>
             </header>
