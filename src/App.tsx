@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import {SecondsClick} from './seconds-click.tsx'
 
 import './App.scss'
 
@@ -19,6 +20,8 @@ function App() {
                     R&R Time Challenge Template 😀
                 </p>
                 <b>{date.toUTCString()}</b>
+
+                <SecondsClick date={date}/>
             </header>
         </div>
     );
