@@ -18,11 +18,12 @@ function App() {
             <header className="App-header">
                 <p>
                     R&R Time Challenge Template 😀
-                    <Balloons></Balloons>
                 </p>
-                <SecondsClick date={date}/>
                 <b>{date.toUTCString()}</b>
             </header>
+
+            <SecondsClick date={date}/>
+            <Balloons></Balloons>
         </div>
     );
 }
