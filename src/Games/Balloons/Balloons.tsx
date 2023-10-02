@@ -3,11 +3,12 @@ import './Balloons.scss'
 import {BalloonState} from "./BalloonState.ts";
 import {useState} from "react";
 
-export function Balloons() {
+export function Balloons(props: { advance: () => void }) {
     const [showStart, setShowStart] = useState(true);
+    const [showAdvance, setShowAdvance] = useState(false);
     const [balloons, setBalloons] = useState<BalloonState[]>([]);
     const [startTime, setStartTime] = useState<Date | null>(null);
-    const [message, setMessage] = useState("Click start to view your seconds...")
+    const [message, setMessage] = useState<string | undefined>("Click start to view your seconds...")
 
     function prepareGame() {
         let uniqueNumbers = [];
@@ -31,8 +32,8 @@ export function Balloons() {
     }
 
     function endGame() {
-        setMessage("Good job! 😎");
-        setShowStart(true);
+        setMessage(undefined);
+        setShowAdvance(true);
     }
 
     function balloonClicked(index: number) {
@@ -48,7 +49,7 @@ export function Balloons() {
         next[index].offset = difference;
 
         setBalloons(next);
-        setMessage(difference < 0.5 ? "Great!" : "Not great :c");
+        setMessage(difference < 0.5 ? "Wow!" : "Ooooh!!");
 
         if (next.every(b => b.revealed)) {
             endGame();
@@ -63,6 +64,7 @@ export function Balloons() {
             </div>
             <p>{message}</p>
             {showStart && <button onClick={prepareGame}>Start</button>}
+            {showAdvance && <button onClick={props.advance}>Finish</button>}
         </>
     )
 }

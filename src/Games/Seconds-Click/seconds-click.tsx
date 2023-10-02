@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export function SecondsClick(props : { date: Date })
+export function SecondsClick(props : { date: Date, advance: () => void })
 {
     const [score, setScore] = useState(0);
     const [buttonColor, setButtonColor] = useState("red");
@@ -31,6 +31,7 @@ export function SecondsClick(props : { date: Date })
         <>
             <BigButton whenPressed={() => Buttonpress()} color={buttonColor}/>
             <ScoreBoard currentScore={score}/>
+            <button onClick={props.advance}>Skip game</button>
         </>
     );
 }

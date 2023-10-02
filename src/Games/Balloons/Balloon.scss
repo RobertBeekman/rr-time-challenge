@@ -14,3 +14,31 @@
     font-size: 32px;
   }
 }
+
+.result {
+  text-align: center;
+  animation: fadein 200ms;
+
+  &.green {
+    color: #b2ff79;
+  }
+
+  &.yellow {
+    color: #ffd779;
+  }
+
+  &.red {
+    color:#ff7979;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
