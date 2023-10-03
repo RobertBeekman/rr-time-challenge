@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react'
-import {SecondsClick} from './Games/Seconds-Click/seconds-click.tsx'
+import {Game} from "./Game.tsx";
 import './App.scss'
-import {Balloons} from "./Games/Balloons/Balloons.tsx";
 
 function App() {
     const [date, setDate] = useState(new Date());
@@ -16,13 +15,12 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <p>
-                    R&R Time Challenge Template 😀
-                    <Balloons></Balloons>
-                </p>
-                <SecondsClick date={date}/>
-                <b>{date.toUTCString()}</b>
+                <h1>{date.toUTCString()}</h1>
             </header>
+
+            <div className="gameContainer">
+                <Game/>
+            </div>
         </div>
     );
 }
