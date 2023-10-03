@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Clock} from "./Clock.tsx";
 
-export function SecondsClick(props: { date: Date }) {
+export function SecondsClick(props: { date: Date, advance: () => void  }) {
     const [score, setScore] = useState(0);
     const [buttonColor, setButtonColor] = useState("green");
     const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));
@@ -26,6 +26,7 @@ export function SecondsClick(props: { date: Date }) {
         const currentPosition = (new Date().getTime() - startDate.getTime()) % 1000;
         console.log(start);
         console.log(end);
+        // TODO, scoring is still incorrect
         if (currentPosition >= start && currentPosition <= end) {
             setScore(score => score + 1);
             setButtonColor("green")
@@ -44,6 +45,7 @@ export function SecondsClick(props: { date: Date }) {
             <div className="buttonScore">
                 <BigButton color={buttonColor}/>
                 <ScoreBoard currentScore={score}/>
+                <button onClick={props.advance}>Skip game 🤯</button>
             </div>
 
             <div>
