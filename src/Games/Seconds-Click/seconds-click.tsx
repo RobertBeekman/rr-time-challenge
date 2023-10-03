@@ -1,37 +1,54 @@
-import React, {useState} from "react";
+import {useState} from "react";
+import {Clock} from "./Clock.tsx";
 
-export function SecondsClick(props : { date: Date })
-{
+export function SecondsClick(props: { date: Date }) {
     const [score, setScore] = useState(0);
-    const [buttonColor, setButtonColor] = useState("red");
+    const [buttonColor, setButtonColor] = useState("green");
+    const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));
+    const [end, setEnd] = useState(start + 100);
+    const [startDate] = useState(new Date());
 
-    function BigButton(props: { whenPressed: React.MouseEventHandler<SVGCircleElement> | undefined, color : string }) {
+    function GenerateNewClickArea() {
+        const newStartTime = Math.floor(Math.random() * (900 + 1));
+        setStart(newStartTime);
+        setEnd(newStartTime + 100)
+    }
+
+    function BigButton(props: { color: string }) {
         return (<>
             <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="black" fill={props.color} onClick={props.whenPressed}/>
+                <circle cx="50" cy="50" r="40" stroke="black" fill={props.color} onClick={ButtonPress}/>
             </svg>
         </>);
     }
 
-    function Buttonpress() {
-        if (props.date.getMilliseconds() > 900 || props.date.getMilliseconds() < 100){
-            setScore(score => score +1);
+    function ButtonPress() {
+        const currentPosition = (new Date().getTime() - startDate.getTime()) % 1000;
+        console.log(start);
+        console.log(end);
+        if (currentPosition >= start && currentPosition <= end) {
+            setScore(score => score + 1);
             setButtonColor("green")
         } else {
             setButtonColor("red")
         }
-        console.log(props.date.getMilliseconds());
+        GenerateNewClickArea();
     }
 
-    function ScoreBoard(props: { currentScore:number}) {
+    function ScoreBoard(props: { currentScore: number }) {
         return (<> <p> Score:{props.currentScore} </p> </>);
     }
 
     return (
         <>
-            <BigButton whenPressed={() => Buttonpress()} color={buttonColor}/>
-            <ScoreBoard currentScore={score}/>
+            <div className="buttonScore">
+                <BigButton color={buttonColor}/>
+                <ScoreBoard currentScore={score}/>
+            </div>
+
+            <div>
+                <Clock start={start} end={end} date={props.date}/>
+            </div>
         </>
     );
 }
-
