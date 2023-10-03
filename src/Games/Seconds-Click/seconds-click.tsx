@@ -1,12 +1,15 @@
 import {useState} from "react";
 import {Clock} from "./Clock.tsx";
 
-export function SecondsClick(props: { date: Date, advance: () => void  }) {
+export function SecondsClick(props: { advance: () => void  }) {
     const [score, setScore] = useState(0);
     const [buttonColor, setButtonColor] = useState("green");
     const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));
     const [end, setEnd] = useState(start + 100);
     const [startDate] = useState(new Date());
+    const [currentRound, setCurrentRound] = useState(1);
+    const AMOUNT_OF_ROUNDS = 5;
+
 
     function GenerateNewClickArea() {
         const newStartTime = Math.floor(Math.random() * (900 + 1));
@@ -23,17 +26,22 @@ export function SecondsClick(props: { date: Date, advance: () => void  }) {
     }
 
     function ButtonPress() {
+        // Check the accuracy
         const currentPosition = (new Date().getTime() - startDate.getTime()) % 1000;
-        console.log(start);
-        console.log(end);
-        // TODO, scoring is still incorrect
         if (currentPosition >= start && currentPosition <= end) {
             setScore(score => score + 1);
             setButtonColor("green")
         } else {
             setButtonColor("red")
         }
-        GenerateNewClickArea();
+
+        // Continue the game
+        if (currentRound == AMOUNT_OF_ROUNDS) {
+            props.advance();
+        } else {
+            setCurrentRound(currentRound+1)
+            GenerateNewClickArea();
+        }
     }
 
     function ScoreBoard(props: { currentScore: number }) {
@@ -49,7 +57,7 @@ export function SecondsClick(props: { date: Date, advance: () => void  }) {
             </div>
 
             <div>
-                <Clock start={start} end={end} date={props.date}/>
+                <Clock start={start} end={end}/>
             </div>
         </>
     );

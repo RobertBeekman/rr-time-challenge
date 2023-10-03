@@ -22,7 +22,7 @@ export function Game() {
     }
 
     if (state === State.SecondsClick) {
-        return <SecondsClick advance={advance} date={new Date()}></SecondsClick>
+        return <SecondsClick advance={advance}></SecondsClick>
     }
     if (state === State.BalloonPopper) {
         return <Balloons advance={advance}></Balloons>

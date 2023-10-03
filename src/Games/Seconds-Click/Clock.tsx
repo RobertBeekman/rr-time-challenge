@@ -1,6 +1,6 @@
 import './Clock.scss'
 
-export function Clock(props: { start: number, end: number, date: Date }) {
+export function Clock(props: { start: number, end: number}) {
     return (
         <div className="clock">
             <div
