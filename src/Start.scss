@@ -22,12 +22,14 @@
     top: 60vh;
     left: 27vw;
     height: 59px;
+    font-size: 20px;
 
     &:hover{
       cursor: pointer;
       background-color: #876b59;
-      box-shadow: 4px 4px 4px black;
+      box-shadow: 4px 4px 12px #222222;
       animation: jiggle 0.55s ease-in 1;
+      color: #40210d;
     }
   }
 }
@@ -46,17 +48,19 @@
 
 .start-screen__time__container {
   background-image: url("/src/assets/Start/start-screen-time-frame.png");
-  height: 284px;
-  width: 383px;
+  height: 254px;
+  width: 343px;
   position: absolute;
-  top: 11vh;
-  left: 40vw;
+  top: 10vh;
+  left: 44vw;
+  background-size: contain;
 
   .start-screen__time {
     color: #40210d;
     font-size: 56px;
     position: relative;
-    top: 11vh;
+    top: 9.4vh;
+    left: -3px;
   }
 
 }
@@ -108,3 +112,16 @@
 		transform: rotate(0deg);
 	}
 }
+
+.start-screen__gear-3 {
+  background-image: url("/src/assets/Start/start-screen-GEAR.png");
+  width: 104px;
+  height: 104px;
+  background-size: contain;
+  position: absolute;
+  top: 75vh;
+  left: 9.2vw;
+  animation: rotating 3s infinite linear;
+}
+
+

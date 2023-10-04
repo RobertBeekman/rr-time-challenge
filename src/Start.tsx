@@ -17,6 +17,7 @@ export function Start(props: { advance: () => void }) {
         </header>
         <div className="start-screen__gear rotating"></div>
         <div className="start-screen__gear-2 rotating-2"></div>
+        <div className="start-screen__gear-3 rotating-2"></div>
 
         <div className='test'>
             <Button onClick={props.advance}>Blow my mind 🤯</Button>
