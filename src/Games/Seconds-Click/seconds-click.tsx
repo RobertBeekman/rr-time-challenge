@@ -1,15 +1,13 @@
 import {useState} from "react";
 import {Clock} from "./Clock.tsx";
 
-export function SecondsClick(props: { advance: () => void  }) {
-    const [score, setScore] = useState(0);
+export function SecondsClick(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
     const [buttonColor, setButtonColor] = useState("green");
     const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));
     const [end, setEnd] = useState(start + 100);
     const [startDate] = useState(new Date());
     const [currentRound, setCurrentRound] = useState(1);
     const AMOUNT_OF_ROUNDS = 5;
-
 
     function GenerateNewClickArea() {
         const newStartTime = Math.floor(Math.random() * (900 + 1));
@@ -29,7 +27,7 @@ export function SecondsClick(props: { advance: () => void  }) {
         // Check the accuracy
         const currentPosition = (new Date().getTime() - startDate.getTime()) % 1000;
         if (currentPosition >= start && currentPosition <= end) {
-            setScore(score => score + 1);
+            props.setScore(score => score + 1);
             setButtonColor("green")
         } else {
             setButtonColor("red")
@@ -42,10 +40,6 @@ export function SecondsClick(props: { advance: () => void  }) {
             setCurrentRound(currentRound+1)
             GenerateNewClickArea();
         }
-    }
-
-    function ScoreBoard(props: { currentScore: number }) {
-        return (<> <p> Score:{props.currentScore} </p> </>);
     }
 
     return (
