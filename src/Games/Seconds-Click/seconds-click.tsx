@@ -21,7 +21,7 @@ export function SecondsClick(props: { advance: () => void  }) {
     function BigButton(props: { color: string }) {
         return (<>
             <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="black" fill={props.color} onClick={ButtonPress}/>
+                <circle cx="50" cy="50" r="40" stroke="black" fill={props.color} onMouseDown={ButtonPress}/>
             </svg>
         </>);
     }
@@ -29,9 +29,13 @@ export function SecondsClick(props: { advance: () => void  }) {
     function ButtonPress() {
         // Check the accuracy
         const currentPosition = (new Date().getTime() - startDate.getTime()) % 1000;
+
         if (currentPosition >= start && currentPosition <= end) {
-            setScore(score => score + 1);
+            setScore(score => score + 100);
             setButtonColor("green")
+        } else if (currentPosition >= (start - 50) && currentPosition <= (end + 50)) {
+            setButtonColor("orange")
+            setScore(score => score + 50);
         } else {
             setButtonColor("red")
         }
