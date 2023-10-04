@@ -17,6 +17,7 @@ function App() {
                 return State.BalloonPopper;
             if (s === State.BalloonPopper)
                 return State.Finish;
+            setScore(0);
             return State.Start;
         })
     }
