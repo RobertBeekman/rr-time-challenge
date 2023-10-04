@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {Clock} from "./Clock.tsx";
+import './seconds-click.scss'
 
 export function SecondsClick(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
-    const [buttonColor, setButtonColor] = useState("green");
     const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));
     const [end, setEnd] = useState(start + 100);
     const [startDate] = useState(new Date());
@@ -15,11 +15,9 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
         setEnd(newStartTime + 100)
     }
 
-    function BigButton(props: { color: string }) {
+    function BigButton() {
         return (<>
-            <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="black" fill={props.color} onClick={ButtonPress}/>
-            </svg>
+        <img className="big-button" src="src/assets/Clock game/clockButton.png" onMouseDown={ButtonPress}></img>
         </>);
     }
 
@@ -28,9 +26,7 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
         const currentPosition = (new Date().getTime() - startDate.getTime()) % 1000;
         if (currentPosition >= start && currentPosition <= end) {
             props.setScore(score => score + 1);
-            setButtonColor("green")
         } else {
-            setButtonColor("red")
         }
 
         // Continue the game
@@ -48,10 +44,8 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
                 <Clock start={start} end={end}/>
             </div>
             <div className="clock-game-screen__BG">
-                <div className="clock-game-screen__image"></div>
-                <div className="clock-game-screen__game"> 
-                    <BigButton color={buttonColor}/>
-                </div>
+                <div className="clock-game-screen__image"> <BigButton/> </div>
+                <div className="clock-game-screen__game"> </div>
                
             </div>
         </>

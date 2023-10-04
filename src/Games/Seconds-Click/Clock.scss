@@ -29,15 +29,15 @@
   height: 600px;
   border-radius: 50%;
   position: absolute;
-  top: 67%;
-  left: 51.5%;
-  transform: translate(-51.5%, -67%);
+  top: 58%;
+  left: 45%;
+  transform: translate(-58%, -45%);
 }
 
 .clock::after {
   content: "";
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   position: absolute;
   z-index: 2;
@@ -49,12 +49,11 @@
 
 .sec_hand {
   position: absolute;
-  width: 227px;
-  height:53px;
-  //background: black;
-  top: 46%;
-  left: 50%;
-  transform-origin: left center;
+  width: 53px;
+  height: 227px;
+  top: 12%;
+  left: 46%;
+  transform-origin: bottom center;
 
   &.started {
     animation: rotate 1s linear infinite;
@@ -74,13 +73,9 @@
 .area {
   position: absolute;
   width: 4px;
-  height: 230px;
-  background: red;
-  top: 12%;
-  left: 50%;
+  height: 200px;
+  background: darkgoldenrod;
+  top: 100px;
+  left:305px;
   transform-origin: bottom;
-}
-
-.buttonScore {
-  margin-top: 500px;
 }
