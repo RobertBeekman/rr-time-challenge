@@ -22,28 +22,45 @@
     top: 60vh;
     left: 27vw;
     height: 59px;
+    font-size: 20px;
 
     &:hover{
       cursor: pointer;
       background-color: #876b59;
-      box-shadow: 4px 4px 4px black;
+      box-shadow: 4px 4px 12px #222222;
+      animation: jiggle 0.55s ease-in 1;
+      color: #40210d;
     }
   }
 }
 
+// Jiggle Keyframes
+@keyframes jiggle {
+  20% {
+     transform: translateY(-13%); }
+  40% {
+     transform: translateY(13%); }
+  60% {
+     transform: translateY(-7%); }
+  80% {
+     transform: translateY(7%); }
+}
+
 .start-screen__time__container {
   background-image: url("/src/assets/Start/start-screen-time-frame.png");
-  height: 284px;
-  width: 383px;
+  height: 254px;
+  width: 343px;
   position: absolute;
-  top: 11vh;
-  left: 43vw;
+  top: 10vh;
+  left: 44vw;
+  background-size: contain;
 
   .start-screen__time {
     color: #40210d;
     font-size: 56px;
     position: relative;
-    top: 11vh;
+    top: 9.4vh;
+    left: -3px;
   }
 
 }
@@ -58,6 +75,7 @@
   animation: rotating 10s infinite linear;
 }
 
+
 @keyframes rotating {
 	0% {
 		transform: rotate(0deg);
@@ -69,3 +87,41 @@
 		transform: rotate(360deg);
 	}
 }
+
+.start-screen__gear-2 {
+  background-image: url("/src/assets/Start/start-screen-GEAR.png");
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  position: absolute;
+  top: 63vh;
+  left: 3.3vw;
+  animation: rotating 5s infinite linear;
+  animation-direction: reverse;
+}
+
+
+@keyframes rotating-2 {
+	0% {
+		transform: rotate(360deg);
+  }
+  50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.start-screen__gear-3 {
+  background-image: url("/src/assets/Start/start-screen-GEAR.png");
+  width: 104px;
+  height: 104px;
+  background-size: contain;
+  position: absolute;
+  top: 75vh;
+  left: 9.2vw;
+  animation: rotating 3s infinite linear;
+}
+
+
