@@ -2,6 +2,7 @@ import {Balloon} from "./Balloon.tsx";
 import './Balloons.scss'
 import {BalloonState} from "./BalloonState.ts";
 import {useState} from "react";
+import Button from "react-bootstrap/Button";
 
 export function Balloons(props: { advance: () => void }) {
     const [showStart, setShowStart] = useState(true);
@@ -63,8 +64,8 @@ export function Balloons(props: { advance: () => void }) {
                 {balloons.map((b, i) => <Balloon key={i} state={b} onClick={() => balloonClicked(i)}/>)}
             </div>
             <p>{message}</p>
-            {showStart && <button onClick={prepareGame}>Start</button>}
-            {showAdvance && <button onClick={props.advance}>Finish</button>}
+            {showStart && <Button onClick={prepareGame}>Start</Button>}
+            {showAdvance && <Button onClick={props.advance}>Finish</Button>}
         </>
     )
 }

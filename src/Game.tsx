@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {SecondsClick} from "./Games/Seconds-Click/seconds-click.tsx";
 import {Balloons} from "./Games/Balloons/Balloons.tsx";
+import Button from 'react-bootstrap/Button';
 
 export function Game() {
     const [state, setState] = useState(State.Start);
@@ -31,7 +32,7 @@ export function Game() {
         return <div>
             <h3>You've made it!</h3>
             <p>That was great, remember all the good times you had.</p>
-            <button onClick={restart}>Start over ⏱️</button>
+            <Button onClick={restart}>Start over ⏱️</Button>
         </div>
     }
     return <div>
@@ -45,7 +46,7 @@ export function Game() {
             Buckle up, because this is a journey you won't want to miss!
         </p>
 
-        <button onClick={advance}>Blow my mind 🤯</button>
+        <Button onClick={advance}>Blow my mind 🤯</Button>
     </div>
 }
 

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Clock} from "./Clock.tsx";
+import Button from "react-bootstrap/Button";
 
 export function SecondsClick(props: { advance: () => void  }) {
     const [score, setScore] = useState(0);
@@ -53,7 +54,7 @@ export function SecondsClick(props: { advance: () => void  }) {
             <div className="buttonScore">
                 <BigButton color={buttonColor}/>
                 <ScoreBoard currentScore={score}/>
-                <button onClick={props.advance}>Skip game 🤯</button>
+                <Button onClick={props.advance}>Skip game 🤯</Button>
             </div>
 
             <div>
