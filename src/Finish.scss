@@ -1,17 +1,17 @@
 .finish-game-screen__BG {
-  background-image: url('/src/assets/finish/end-screen-bg.png');
+  background-image: url("/src/assets/finish/end-screen-bg.png");
   background-repeat: repeat;
   height: 100vh;
   background-size: 40%;
 
   .finish-game-screen__image {
-    background-image: url('/src/assets/finish/end-screen-image.png');
+    background-image: url("/src/assets/finish/end-screen-image.png");
     height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
     .btn{
       margin-top: 20px;
-      background-image: url('/src/assets/finish/end-screen-button.png');
+      background-image: url("/src/assets/finish/end-screen-button.png");
       background-position: 74%;
       background-size: 100%;
       color: black;

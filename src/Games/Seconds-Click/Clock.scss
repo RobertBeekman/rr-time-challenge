@@ -2,12 +2,12 @@
 
 
 .clock-game-screen__BG {
-  background-image: url('src/assets/Clock game/clock-bg.png');
+  background-image: url("/src/assets/Clock game/clock-bg.png");
   height: 100vh;
   background-repeat: repeat;
 
   .clock-game-screen__image {
-    background-image: url('src/assets/Clock game/clock-clock-image.png');
+    background-image: url("/src/assets/Clock game/clock-clock-image.png");
     height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
