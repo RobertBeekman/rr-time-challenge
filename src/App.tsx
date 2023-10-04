@@ -7,6 +7,7 @@ import './App.scss'
 
 function App() {
     const [state, setState] = useState(State.Start);
+    const [score, setScore] = useState(0);
 
     function advance() {
         setState(s => {
@@ -21,13 +22,13 @@ function App() {
     }
 
     if (state === State.SecondsClick) {
-        return <SecondsClick advance={advance}/>
+        return <SecondsClick advance={advance} setScore={setScore}/>
     }
     if (state === State.BalloonPopper) {
-        return <Balloons advance={advance}/>
+        return <Balloons advance={advance} setScore={setScore}/>
     }
     if (state === State.Finish) {
-        return <Finish advance={advance}/>
+        return <Finish advance={advance} score={score}/>
     }
     return <Start advance={advance}/>
 }
