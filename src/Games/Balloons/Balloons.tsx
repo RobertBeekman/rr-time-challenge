@@ -59,13 +59,16 @@ export function Balloons(props: { advance: () => void }) {
 
     return (
         <>
-            <p>Remember the seconds and click on each balloon after enough time has passed!</p>
-            <div className="balloons">
-                {balloons.map((b, i) => <Balloon key={i} state={b} onClick={() => balloonClicked(i)}/>)}
+            <div className="animal-game-screen__BG">
+                <div className="animal-game-screen__image">
+                <div className="balloons">
+                    {balloons.map((b, i) => <Balloon key={i} state={b} onClick={() => balloonClicked(i)}/>)}
+                </div>
+                <p>{message}</p>
+                {showStart && <Button onClick={prepareGame}>Start</Button>}
+                {showAdvance && <Button onClick={props.advance}>Finish</Button>}
+                </div>
             </div>
-            <p>{message}</p>
-            {showStart && <Button onClick={prepareGame}>Start</Button>}
-            {showAdvance && <Button onClick={props.advance}>Finish</Button>}
         </>
     )
 }
