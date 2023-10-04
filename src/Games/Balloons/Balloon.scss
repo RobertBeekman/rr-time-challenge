@@ -13,12 +13,11 @@
 }
 
 .soup {
-  position: fixed;
+  position: absolute;
   width: 225px;
   height: 200px;
   background-size: cover;
   background-image: url("/src/assets/Amimal/soep splatter2.png");
-  top: 203px;
 }
 
 .animal_0 {
@@ -29,6 +28,10 @@
 
   .result {
     margin-bottom: 30px
+  }
+
+  .soup {
+    top: 400px;
   }
 }
 
@@ -41,6 +44,11 @@
   .result {
     margin-bottom: 20px
   }
+
+  .soup {
+    top: 320px;
+    rotate: 35deg;
+  }
 }
 
 .animal_2 {
@@ -52,6 +60,11 @@
   .result {
     margin-bottom: 30px
   }
+
+  .soup {
+    top: 300px;
+    rotate: 280deg;
+  }
 }
 
 .animal_3 {
@@ -62,6 +75,11 @@
 
   .result {
     margin-bottom: 50px
+  }
+
+  .soup {
+    top: 400px;
+    rotate: 35deg;
   }
 }
 
