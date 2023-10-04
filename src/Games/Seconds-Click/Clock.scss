@@ -16,8 +16,10 @@
 
 .clock-game-screen__game {
   position: absolute;
-  top: 85%;
-  left: 48%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App {
