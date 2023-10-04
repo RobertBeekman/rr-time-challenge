@@ -1,10 +1,7 @@
 import './Balloon.scss'
-import {useState} from "react";
 import {BalloonState} from "./BalloonState.ts";
 
-export function Balloon(props: { state: BalloonState, onClick: () => void }) {
-    const [hueRotation] = useState(Math.round(Math.random() * 7) * 45);
-
+export function Balloon(props: { index: number, state: BalloonState, onClick: () => void }) {
     function getResultClass() {
         if (props.state.offset && props.state.offset < 200) {
             return "text-success";
@@ -16,10 +13,11 @@ export function Balloon(props: { state: BalloonState, onClick: () => void }) {
     }
 
     const resultClasses = `result ${getResultClass()}`
-    return <div>
-        <div className="balloon" style={{filter: "hue-rotate(" + hueRotation + "deg)"}} onClick={props.onClick}>
+    return <div className={"animal animal_" + props.index} onClick={props.onClick}>
+        {props.state.offset !== undefined && <div className="soup"/>}
+        <div className="result">
             {props.state.revealed ? <span>{props.state.time} sec</span> : ''}
+            {props.state.offset !== undefined && <span className={resultClasses}>{Math.round(props.state.offset ?? 0)} ms</span>}
         </div>
-        {props.state.offset !== 0 && <div className={resultClasses}><p>{Math.round(props.state.offset ?? 0)} ms</p></div>}
     </div>
 }

@@ -1,7 +1,7 @@
 import {Balloon} from "./Balloon.tsx";
 import './Balloons.scss'
 import {BalloonState} from "./BalloonState.ts";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Button from "react-bootstrap/Button";
 
 export function Balloons(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
@@ -11,7 +11,7 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
     const [startTime, setStartTime] = useState<Date | null>(null);
     const [message, setMessage] = useState<string | undefined>("Click start to view your seconds...")
 
-    function prepareGame() {
+    useEffect(() => {
         let uniqueNumbers = [];
         while (uniqueNumbers.length < 4) {
             const r = Math.floor(Math.random() * 9) + 1;
@@ -19,15 +19,18 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
                 uniqueNumbers.push(r)
             }
         }
+        setBalloons(uniqueNumbers.map(n => new BalloonState(n, undefined, false)));
+    }, []);
 
+    function prepareGame() {
+        setBalloons(b => b.map(b => new BalloonState(b.time, undefined, true)))
         setShowStart(false);
-        setBalloons(uniqueNumbers.map(n => new BalloonState(n, 0, true)));
         setTimeout(() => startGame(), 3000)
         setMessage("Memorize your seconds... 👀");
     }
 
     function startGame() {
-        setBalloons(b => b.map(b => new BalloonState(b.time, 0, false)))
+        setBalloons(b => b.map(b => new BalloonState(b.time, undefined, false)))
         setStartTime(new Date());
         setMessage("Go!");
     }
@@ -39,14 +42,13 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
 
     function balloonClicked(index: number) {
         const balloon = balloons[index];
-        if (!startTime || balloon.revealed) {
+        if (!startTime || balloon.offset !== undefined) {
             return;
         }
 
         const ms = (new Date().getTime() - startTime.getTime());
         const difference = Math.abs(ms - (balloon.time * 1000));
         const next = balloons.map(b => new BalloonState(b.time, b.offset, b.revealed));
-        next[index].revealed = true;
         next[index].offset = difference;
 
         setBalloons(next);
@@ -55,8 +57,7 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
         } else if (difference <  600) {
             props.setScore(s => s + 50);
         }
-        console.log(difference);
-        if (next.every(b => b.revealed)) {
+        if (next.every(b => b.offset !== undefined)) {
             endGame();
         }
     }
@@ -66,7 +67,7 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
             <div className="animal-game-screen__BG">
                 <div className="animal-game-screen__image">
                 <div className="balloons">
-                    {balloons.map((b, i) => <Balloon key={i} state={b} onClick={() => balloonClicked(i)}/>)}
+                    {balloons.map((b, i) => <Balloon index={i} key={i} state={b} onClick={() => balloonClicked(i)}/>)}
                 </div>
                 <p>{message}</p>
                 {showStart && <Button onClick={prepareGame}>Start</Button>}

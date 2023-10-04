@@ -1,12 +1,8 @@
 
-.balloon {
+.animal {
   display: flex;
-  width: 200px;
-  height: 200px;
   color: white;
-  background-image: url("/src/assets/balloon.svg");
-  background-size: cover;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-around;
   cursor: pointer;
 
@@ -16,21 +12,63 @@
   }
 }
 
+.soup {
+  position: fixed;
+  width: 225px;
+  height: 200px;
+  background-size: cover;
+  background-image: url("/src/assets/Amimal/soep splatter2.png");
+  top: 203px;
+}
+
+.animal_0 {
+  background-image: url("/src/assets/Amimal/animal_0.png");
+  background-size: contain;
+  width: 380px;
+  height: 700px;
+
+  .result {
+    margin-bottom: 30px
+  }
+}
+
+.animal_1 {
+  background-image: url("/src/assets/Amimal/animal_1.png");
+  background-size: contain;
+  width: 380px;
+  height: 667px;
+
+  .result {
+    margin-bottom: 20px
+  }
+}
+
+.animal_2 {
+  background-image: url("/src/assets/Amimal/animal_2.png");
+  background-size: contain;
+  width: 400px;
+  height: 650px;
+
+  .result {
+    margin-bottom: 30px
+  }
+}
+
+.animal_3 {
+  background-image: url("/src/assets/Amimal/animal_3.png");
+  background-size: contain;
+  width: 355px;
+  height: 650px;
+
+  .result {
+    margin-bottom: 50px
+  }
+}
+
 .result {
   text-align: center;
   animation: fadein 200ms;
-
-  &.green {
-    color: #b2ff79;
-  }
-
-  &.yellow {
-    color: #ffd779;
-  }
-
-  &.red {
-    color:#ff7979;
-  }
+  text-shadow: 1px 2px 2px black;;
 }
 
 @keyframes fadein {
