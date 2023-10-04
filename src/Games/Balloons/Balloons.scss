@@ -1,6 +1,10 @@
+.intro {
+  margin: 20px;
+}
 .balloons {
   display: flex;
   justify-content: space-evenly;
+  margin: 0 150px;
 }
 
 .scores {
@@ -14,13 +18,12 @@
   background-size: 40%;
 
   .animal-game-screen__image {
-    height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
 
     .btn{ 
       background-color: red;
-      margin-top: 180px;
+      margin-top: 10px;
     }
   }
 }

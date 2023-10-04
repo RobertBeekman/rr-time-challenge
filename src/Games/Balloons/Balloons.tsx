@@ -65,11 +65,12 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
     return (
         <>
             <div className="animal-game-screen__BG">
+                <img src="/src/assets/Amimal/uitleg.png" className="intro"/>
                 <div className="animal-game-screen__image">
                 <div className="balloons">
                     {balloons.map((b, i) => <Balloon index={i} key={i} state={b} onClick={() => balloonClicked(i)}/>)}
                 </div>
-                <p>{message}</p>
+                <h2>{message}</h2>
                 {showStart && <Button onClick={prepareGame}>Start</Button>}
                 {showAdvance && <Button onClick={props.advance}>Finish</Button>}
                 </div>
