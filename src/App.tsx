@@ -1,28 +1,42 @@
-import {useEffect, useState} from 'react'
-import {Game} from "./Game.tsx";
+import {useState} from 'react'
+import {SecondsClick} from "./Games/Seconds-Click/seconds-click.tsx";
+import {Balloons} from "./Games/Balloons/Balloons.tsx";
+import {Finish} from "./Finish.tsx";
+import {Start} from "./Start.tsx";
 import './App.scss'
 
 function App() {
-    const [date, setDate] = useState(new Date());
+    const [state, setState] = useState(State.Start);
 
-    useEffect(() => {
-        const timer = setInterval(() => setDate(new Date()), 1000)
-        return function cleanup() {
-            clearInterval(timer)
-        }
-    });
+    function advance() {
+        setState(s => {
+            if (s === State.Start)
+                return State.SecondsClick;
+            if (s === State.SecondsClick)
+                return State.BalloonPopper;
+            if (s === State.BalloonPopper)
+                return State.Finish;
+            return State.Start;
+        })
+    }
 
-    return (
-        <div className="start-screen__BG">
-            <header className="start-screen__time__container">
-                <h1 className='start-screen__time'>{date.toLocaleTimeString()}</h1>
-            </header>
-            <div className="start-screen__gear rotating"></div>
-            <div className='test'>
-                <Game/>
-            </div>
-        </div>
-    );
+    if (state === State.SecondsClick) {
+        return <SecondsClick advance={advance}/>
+    }
+    if (state === State.BalloonPopper) {
+        return <Balloons advance={advance}/>
+    }
+    if (state === State.Finish) {
+        return <Finish advance={advance}/>
+    }
+    return <Start advance={advance}/>
+}
+
+enum State {
+    Start,
+    SecondsClick,
+    BalloonPopper,
+    Finish
 }
 
 export default App

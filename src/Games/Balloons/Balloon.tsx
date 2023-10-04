@@ -7,12 +7,12 @@ export function Balloon(props: { state: BalloonState, onClick: () => void }) {
 
     function getResultClass() {
         if (props.state.offset * 1000 < 200) {
-            return "green";
+            return "text-success";
         }
         if (props.state.offset * 1000 < 600) {
-            return "yellow";
+            return "text-warning";
         }
-        return "red";
+        return "text-danger";
     }
 
     const resultClasses = `result ${getResultClass()}`
