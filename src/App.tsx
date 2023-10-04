@@ -15,7 +15,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>{date.toUTCString()}</h1>
+                <h1 className='time'>{date.toUTCString()}</h1>
             </header>
 
             <div className="gameContainer">

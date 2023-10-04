@@ -3,8 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Sanchez', serif;
 }
 
-.gameContainer {
-  min-height: 400px;
+body{
+  background-image: url('src/assets/start-screen-image.png');
+}
+
+.time {
+  color: red;
+  font-size: 16px;
 }
