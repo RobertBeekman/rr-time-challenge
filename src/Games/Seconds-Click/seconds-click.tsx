@@ -17,7 +17,7 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
 
     function BigButton() {
         return (<>
-        <img className="big-button" src="src/assets/Clock game/clockButton.png" onMouseDown={ButtonPress}></img>
+        <img className="big-button" src="/src/assets/Clock game/clockButton.png" onMouseDown={ButtonPress}></img>
         </>);
     }
 

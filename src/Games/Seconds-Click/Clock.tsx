@@ -21,7 +21,7 @@ export function Clock(props: { start: number, end: number}) {
             />
             <div
                 className="sec_hand started"
-            ><img src="src/assets/Clock game/clock-game-hand-1.png"></img></div>
+            ><img src="/src/assets/Clock game/clock-game-hand-1.png"></img></div>
         </div>
     );
 }
