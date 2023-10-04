@@ -9,7 +9,9 @@
     height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
-    .btn{
+   
+  } 
+  .btn{
       margin-top: 20px;
       background-image: url("/src/assets/finish/end-screen-button.png");
       background-position: 74%;
@@ -17,22 +19,28 @@
       color: black;
       border: none;
       width: 198px;
-      background-color: #876b59;
+      background-color: #876b59 !important;
       cursor: pointer;
+      margin-bottom: 20px;
 
       &:hover{
         cursor: pointer;
       }
     }
-  }
+    .restart{
+      position: absolute;
+      top: 72vh;
+      color: #6c2a04;    
+      font-weight: 600;
+    }
 }
 
 .highscore {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   position: relative;
-  width: 20vw;
-  top: 31vh;
-  left: 24vw;
-  max-height: 540px;
-  overflow: hidden;
+  width: 18vw;
+  top: 35vh;
+  left: 14vw;
+  max-height: 501px;
+  overflow: scroll;
 }

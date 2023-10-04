@@ -29,7 +29,7 @@ export function HighScore(props: { score: number }) {
     return <div>
         <h3>Your score: {props.score}</h3>
         <Form.Label htmlFor="inputPassword5">Enter your name</Form.Label>
-        <Form.Control placeholder="TimeMaster1337" onChange={handleChange} value={name}/>
+        <Form.Control placeholder="your name here" onChange={handleChange} value={name}/>
 
         <Button variant="primary" type="submit" onClick={submit} disabled={!name}>
             Submit
