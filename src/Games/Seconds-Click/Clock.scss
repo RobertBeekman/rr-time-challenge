@@ -16,6 +16,71 @@
 
 .clock-game-screen__game {
   position: absolute;
-  top: 55%;
-  left: 40%;
+  top: 85%;
+  left: 48%;
+}
+
+.App {
+  font-family: sans-serif;
+}
+
+.clock {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: absolute;
+  top: 67%;
+  left: 51.5%;
+  transform: translate(-51.5%, -67%);
+}
+
+.clock::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+}
+
+.sec_hand {
+  position: absolute;
+  width: 227px;
+  height:53px;
+  //background: black;
+  top: 46%;
+  left: 50%;
+  transform-origin: left center;
+
+  &.started {
+    animation: rotate 1s linear infinite;
+
+    @keyframes rotate {
+      from {
+        transform: rotateZ(0);
+      }
+
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+}
+
+.area {
+  position: absolute;
+  width: 4px;
+  height: 230px;
+  background: red;
+  top: 12%;
+  left: 50%;
+  transform-origin: bottom;
+}
+
+.buttonScore {
+  margin-top: 500px;
 }
