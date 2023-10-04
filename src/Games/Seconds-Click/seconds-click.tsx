@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Clock} from "./Clock.tsx";
 import Button from "react-bootstrap/Button";
 
-export function SecondsClick(props: { advance: () => void  }) {
+export function SecondsClick(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
     const [score, setScore] = useState(0);
     const [buttonColor, setButtonColor] = useState("green");
     const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));

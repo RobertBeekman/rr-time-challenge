@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {HighScore} from "./HighScore.tsx";
 import './Finish.scss'
 
-export function Finish(props: { advance: () => void }) {
+export function Finish(props: { advance: () => void, score: number }) {
     const [date, setDate] = useState(new Date());
     useEffect(() => {
         const timer = setInterval(() => setDate(new Date()), 1000)
@@ -18,7 +18,7 @@ export function Finish(props: { advance: () => void }) {
         </header>
         <div className="start-screen__gear rotating"></div>
         <div className='test'>
-            <HighScore score={123}></HighScore>
+            <HighScore score={props.score}></HighScore>
             <Button onClick={props.advance}>Restart!</Button>
         </div>
     </div>

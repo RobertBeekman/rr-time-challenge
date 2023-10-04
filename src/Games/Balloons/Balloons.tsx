@@ -4,7 +4,7 @@ import {BalloonState} from "./BalloonState.ts";
 import {useState} from "react";
 import Button from "react-bootstrap/Button";
 
-export function Balloons(props: { advance: () => void }) {
+export function Balloons(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
     const [showStart, setShowStart] = useState(true);
     const [showAdvance, setShowAdvance] = useState(false);
     const [balloons, setBalloons] = useState<BalloonState[]>([]);
@@ -43,15 +43,19 @@ export function Balloons(props: { advance: () => void }) {
             return;
         }
 
-        const seconds = (new Date().getTime() - startTime.getTime()) / 1000;
-        const difference = Math.abs(seconds - balloon.time);
+        const ms = (new Date().getTime() - startTime.getTime());
+        const difference = Math.abs(ms - (balloon.time * 1000));
         const next = balloons.map(b => new BalloonState(b.time, b.offset, b.revealed));
         next[index].revealed = true;
         next[index].offset = difference;
 
         setBalloons(next);
-        setMessage(difference < 0.5 ? "Wow!" : "Ooooh!!");
-
+        if (difference < 200) {
+            props.setScore(s => s + 100);
+        } else if (difference <  600) {
+            props.setScore(s => s + 50);
+        }
+        console.log(difference);
         if (next.every(b => b.revealed)) {
             endGame();
         }
