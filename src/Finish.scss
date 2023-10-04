@@ -1,44 +1,38 @@
-.start-screen__BG {
-  background-image: url('src/assets/start-screen-image.png');
+.finish-game-screen__BG {
+  background-image: url('/src/assets/finish/end-screen-bg.png');
+  background-repeat: repeat;
   height: 100vh;
+  background-size: 40%;
+
+  .finish-game-screen__image {
+    background-image: url('/src/assets/finish/end-screen-image.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    .btn{
+      margin-top: 20px;
+      background-image: url('/src/assets/finish/end-screen-button.png');
+      background-position: 74%;
+      background-size: 100%;
+      color: black;
+      border: none;
+      width: 198px;
+      background-color: #876b59;
+      cursor: pointer;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-.start-screen__time__container {
-  background-image: url(src/assets/start-screen-time-frame.png);
-  height: 284px;
-  width: 383px;
-  position: absolute;
-  top: 11vh;
-  left: 55vw;
-
-  .start-screen__time {
-    color: #40210d;
-    font-size: 56px;
-    position: relative;
-    top: 11vh;
-  }
-
-}
-
-
-.start-screen__gear {
-  background-image: url('src/assets/start-screen-GEAR.png');
-  width: 256px;
-  height: 256px;
-  position: absolute;
-  top: 41vh;
-  left: 7vw;
-  animation: rotating 10s infinite linear;
-}
-
-@keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.highscore {
+  font-family: 'Lora', serif;
+  position: relative;
+  width: 20vw;
+  top: 31vh;
+  left: 24vw;
+  max-height: 540px;
+  overflow: hidden;
 }

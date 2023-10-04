@@ -4,12 +4,35 @@
 }
 
 .start-screen__BG {
-  background-image: url('src/assets/Start/start-screen-image.png');
+  background-image: url('/src/assets/Start/start-screen-image.png');
   background-size: cover; 
+  height: 100vh;
+  
+  .btn{
+    margin-top: 20px;
+    background-image: url('/src/assets/finish/end-screen-button.png');
+    background-position: 74%;
+    background-size: 100%;
+    color: black;
+    border: none;
+    width: 198px;
+    background-color: #876b59;
+    cursor: pointer;
+    position: absolute;
+    top: 60vh;
+    left: 30vw;
+    height: 59px;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #876b59;
+      box-shadow: 4px 4px 4px black;
+    }
+  }
 }
 
 .start-screen__time__container {
-  background-image: url('src/assets/Start/start-screen-time-frame.png');
+  background-image: url('/src/assets/Start/start-screen-time-frame.png');
   height: 284px;
   width: 383px;
   position: absolute;
@@ -26,7 +49,7 @@
 }
 
 .start-screen__gear {
-  background-image: url('src/assets/Start/start-screen-GEAR.png');
+  background-image: url('/src/assets/Start/start-screen-GEAR.png');
   width: 256px;
   height: 256px;
   position: absolute;

@@ -12,14 +12,15 @@ export function Finish(props: { advance: () => void, score: number }) {
         }
     });
 
-    return <div className="start-screen__BG">
-        <header className="start-screen__time__container">
-            <h1 className='start-screen__time'>{date.toLocaleTimeString()}</h1>
-        </header>
-        <div className="start-screen__gear rotating"></div>
-        <div className='test'>
-            <HighScore score={props.score}></HighScore>
-            <Button onClick={props.advance}>Restart!</Button>
+    return <div className="finish-game-screen__BG">
+        {/* <header className="finish-screen__time__container">
+            <h1 className='finish-screen__time'>{date.toLocaleTimeString()}</h1>
+        </header> */}
+        <div className="finish-game-screen__image">
+            <div className='test highscore'>
+                <HighScore score={props.score}></HighScore>
+                <Button onClick={props.advance}>Restart!</Button>
+            </div>
         </div>
     </div>
 }
