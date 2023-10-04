@@ -6,7 +6,7 @@ import {Start} from "./Start.tsx";
 import './App.scss'
 
 function App() {
-    const [state, setState] = useState(State.BalloonPopper);
+    const [state, setState] = useState(State.Start);
     const [score, setScore] = useState(0);
 
     function advance() {

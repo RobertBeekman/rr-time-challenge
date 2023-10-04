@@ -1,12 +1,11 @@
 .balloons {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .scores {
   height: 96px;
 }
-
-
 
 .animal-game-screen__BG {
   background-image: url('src/assets/Amimal/dieren-bg.png');
