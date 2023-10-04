@@ -27,8 +27,21 @@
       cursor: pointer;
       background-color: #876b59;
       box-shadow: 4px 4px 4px black;
+      animation: jiggle 0.55s ease-in 1;
     }
   }
+}
+
+// Jiggle Keyframes
+@keyframes jiggle {
+  20% {
+     transform: translateY(-13%); }
+  40% {
+     transform: translateY(13%); }
+  60% {
+     transform: translateY(-7%); }
+  80% {
+     transform: translateY(7%); }
 }
 
 .start-screen__time__container {
@@ -37,7 +50,7 @@
   width: 383px;
   position: absolute;
   top: 11vh;
-  left: 43vw;
+  left: 40vw;
 
   .start-screen__time {
     color: #40210d;
@@ -58,6 +71,7 @@
   animation: rotating 10s infinite linear;
 }
 
+
 @keyframes rotating {
 	0% {
 		transform: rotate(0deg);
@@ -67,5 +81,30 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+.start-screen__gear-2 {
+  background-image: url("/src/assets/Start/start-screen-GEAR.png");
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  position: absolute;
+  top: 63vh;
+  left: 3.3vw;
+  animation: rotating 5s infinite linear;
+  animation-direction: reverse;
+}
+
+
+@keyframes rotating-2 {
+	0% {
+		transform: rotate(360deg);
+  }
+  50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(0deg);
 	}
 }

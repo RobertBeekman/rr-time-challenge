@@ -16,6 +16,8 @@ export function Start(props: { advance: () => void }) {
             <h1 className='start-screen__time'>{date.toLocaleTimeString()}</h1>
         </header>
         <div className="start-screen__gear rotating"></div>
+        <div className="start-screen__gear-2 rotating-2"></div>
+
         <div className='test'>
             <Button onClick={props.advance}>Blow my mind 🤯</Button>
         </div>
