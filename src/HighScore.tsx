@@ -28,11 +28,10 @@ export function HighScore(props: { score: number }) {
 
     return <div>
         <h3>Your score: {props.score}</h3>
-        <Form.Label htmlFor="inputPassword5">Enter your name</Form.Label>
-        <Form.Control placeholder="your name here" onChange={handleChange} value={name}/>
+        <Form.Control placeholder="Enter your name here" onChange={handleChange} value={name}/>
 
         <Button variant="primary" type="submit" onClick={submit} disabled={!name}>
-            Submit
+            Submit score
         </Button>
 
         <h3>High scores</h3>

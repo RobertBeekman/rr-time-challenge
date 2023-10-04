@@ -30,8 +30,9 @@
     .restart{
       position: absolute;
       top: 72vh;
-      color: #6c2a04;    
-      font-weight: 600;
+      color: #902000;    
+      font-size: 33px;
+
     }
 }
 
@@ -41,6 +42,23 @@
   width: 18vw;
   top: 35vh;
   left: 14vw;
-  max-height: 501px;
+  max-height: 470px;
   overflow: scroll;
+  text-align: left;
+  
+  .list-group-item {
+    text-align: left;
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    color: var(--bs-list-group-color);
+    text-decoration: none;
+    background: none;
+    border-bottom: solid #dfd5cd;
+    padding-left: 10px;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+
+  }
 }

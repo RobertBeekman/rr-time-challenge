@@ -1,6 +1,8 @@
 .intro {
-  margin: 20px;
+  margin: 40px;
+  width: 40%;
 }
+
 .balloons {
   display: flex;
   justify-content: space-evenly;
@@ -16,12 +18,13 @@
   background-repeat: repeat;
   height: 100vh;
   background-size: 40%;
+  cursor: url("/src/assets/Amimal/can-of-soup.png"), auto;	
 
   .animal-game-screen__image {
     background-repeat: no-repeat;
     background-size: contain;
 
-    .btn{ 
+    .btn { 
       background-color: red;
       margin-top: 10px;
     }

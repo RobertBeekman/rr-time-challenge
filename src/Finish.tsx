@@ -10,7 +10,6 @@ export function Finish(props: { advance: () => void, score: number }) {
         <div className="finish-game-screen__image">
             <div className='test highscore'>
                 <HighScore score={props.score}></HighScore>
-                
             </div>
         </div>
         <Button className="restart" onClick={props.advance}>Restart!</Button>
