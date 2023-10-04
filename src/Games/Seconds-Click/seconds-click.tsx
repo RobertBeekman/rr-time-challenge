@@ -50,9 +50,15 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
 
     return (
         <>
-            <div className="buttonScore">
-                <BigButton color={buttonColor}/>
-                <Button onClick={props.advance}>Skip game 🤯</Button>
+            <div className="clock-game-screen__BG">
+                <div className="clock-game-screen__image"></div>
+                <div className="clock-game-screen__game"> 
+                    <BigButton color={buttonColor}/>
+                    {/* <ScoreBoard currentScore={score}/> */}
+                    <Button onClick={props.advance}>Skip game 🤯</Button>
+
+                </div>
+               
             </div>
 
             <div>

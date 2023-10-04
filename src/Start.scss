@@ -1,15 +1,20 @@
+#root {
+  font-family: 'Sanchez', serif;
+  text-align: center;
+}
+
 .start-screen__BG {
-  background-image: url('src/assets/start-screen-image.png');
-  height: 100vh;
+  background-image: url('src/assets/Start/start-screen-image.png');
+  background-size: cover; 
 }
 
 .start-screen__time__container {
-  background-image: url(src/assets/start-screen-time-frame.png);
+  background-image: url('src/assets/Start/start-screen-time-frame.png');
   height: 284px;
   width: 383px;
   position: absolute;
   top: 11vh;
-  left: 55vw;
+  left: 43vw;
 
   .start-screen__time {
     color: #40210d;
@@ -20,9 +25,8 @@
 
 }
 
-
 .start-screen__gear {
-  background-image: url('src/assets/start-screen-GEAR.png');
+  background-image: url('src/assets/Start/start-screen-GEAR.png');
   width: 256px;
   height: 256px;
   position: absolute;
@@ -32,13 +36,13 @@
 }
 
 @keyframes rotating {
-  0% {
-    transform: rotate(0deg);
+	0% {
+		transform: rotate(0deg);
   }
   50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
