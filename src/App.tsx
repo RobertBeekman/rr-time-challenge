@@ -13,12 +13,12 @@ function App() {
     });
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1 className='time'>{date.toUTCString()}</h1>
+        <div className="start-screen__BG">
+            <header className="start-screen__time__container">
+                <h1 className='start-screen__time'>{date.toLocaleTimeString()}</h1>
             </header>
-
-            <div className="gameContainer">
+            <div className="start-screen__gear rotating"></div>
+            <div className='test'>
                 <Game/>
             </div>
         </div>
