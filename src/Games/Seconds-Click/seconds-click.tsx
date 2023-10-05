@@ -14,6 +14,7 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
     const [start, setStart] = useState(Math.floor(Math.random() * (900 + 1)));
     const [end, setEnd] = useState(start + 100);
     const [text, setText] = useState("");
+    const [textClass, setTextClass] = useState("");
     const [currentRound, setCurrentRound] = useState(1);
     const AMOUNT_OF_ROUNDS = 5;
 
@@ -43,9 +44,11 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
         if (currentPosition >= start && currentPosition <= end) {
             props.setScore(score => score + 100);
             setText("Perfect!")
+            setTextClass("text-success");
         } else if (currentPosition >= (start - 50) && currentPosition <= (end + 50)) {
             props.setScore(score => score + 50);
             setText("Close!")
+            setTextClass("text-warning");
         } else {
             let difference : number = 0;
             if (currentPosition < start){
@@ -54,6 +57,7 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
                 difference = currentPosition - end;
             }
             setText(difference + " milliseconds off")
+            setTextClass("text-danger");
         }
 
         // Continue the game
@@ -80,7 +84,9 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
                     {showAdvance && <Button onClick={props.advance}>Finish</Button>}
                     </div>
 
-                    <h4 className="result">{text}</h4>
+                    <div className="result">
+                        <h4 className={textClass}>{text}</h4>
+                    </div>
 
                     <img className="big-button" src={clockButton} onMouseDown={buttonPress}></img>
                 </div>
