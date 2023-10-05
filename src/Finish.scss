@@ -30,18 +30,24 @@
     .restart{
       position: absolute;
       top: 72vh;
-      color: #902000;    
+      color: black;
       font-size: 33px;
-
+      
+      &:hover {
+        cursor: pointer;
+        background-color: #876b59;
+        box-shadow: 4px 4px 12px #222222;
+        animation: jiggle 0.55s ease-in 1;
+        color: #40210d;
+      }
     }
 }
 
 .highscore {
-  font-family: "Lora", serif;
   position: relative;
-  width: 18vw;
+  width: 17.1vw;
   top: 35vh;
-  left: 14vw;
+  left: 12.5vw;
   max-height: 470px;
   overflow: scroll;
   text-align: left;
@@ -61,4 +67,15 @@
     border-left: none;
 
   }
+}
+
+.klokje{
+  position: absolute;
+  width: 390px;
+  height: 360px;
+  background-image: url(src/assets/finish/klokje.png);
+  background-size: contain;
+  left: 21vw;
+  top: 61vh;
+  background-repeat: no-repeat;
 }

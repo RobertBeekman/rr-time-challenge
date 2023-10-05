@@ -18,15 +18,35 @@
   background-repeat: repeat;
   height: 100vh;
   background-size: 40%;
-  cursor: url("/src/assets/Amimal/can-of-soup.png"), auto;	
+  cursor: url("/src/assets/Amimal/can-of-soup.png");	
 
   .animal-game-screen__image {
     background-repeat: no-repeat;
     background-size: contain;
 
-    .btn { 
-      background-color: red;
-      margin-top: 10px;
-    }
+    .btn{
+      margin-top: 0;
+      background-image: url(/src/assets/finish/end-screen-button.png);
+      background-position: 74%;
+      background-size: 100%;
+      color: black;
+      border: none;
+      width: 198px;
+      background-color: #876b59;
+      cursor: pointer;
+      position: absolute;
+      left: 45vw;
+      height: 59px;
+      font-size: 20px;
+      top: 92vh;
+
+   &:hover{
+     cursor: pointer;
+     background-color: #876b59;
+     box-shadow: 4px 4px 12px #222222;
+     animation: jiggle 0.55s ease-in 1;
+     color: #40210d;
+   }
+ }
   }
 }

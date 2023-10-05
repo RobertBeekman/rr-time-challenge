@@ -75,7 +75,7 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
                 </div>
                 <div className="clock-game-screen__game">
                     <div className="message">
-                    <h2>{message}</h2>
+                    <p className="uitleg">{message}</p>
                     {showStart && <Button onClick={startGame}>Start</Button>}
                     {showAdvance && <Button onClick={props.advance}>Finish</Button>}
                     </div>

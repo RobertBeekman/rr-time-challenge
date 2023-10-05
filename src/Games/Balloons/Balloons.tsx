@@ -71,7 +71,7 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
                 <div className="balloons">
                     {balloons.map((b, i) => <Balloon index={i} key={i} state={b} onClick={() => balloonClicked(i)}/>)}
                 </div>
-                <h2>{message}</h2>
+                {/* <h2>{message}</h2> */}
                 {showStart && <Button onClick={prepareGame}>Start</Button>}
                 {showAdvance && <Button onClick={props.advance}>Finish</Button>}
                 </div>

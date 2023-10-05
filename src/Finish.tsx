@@ -11,6 +11,7 @@ export function Finish(props: { advance: () => void, score: number }) {
             <div className='test highscore'>
                 <HighScore score={props.score}></HighScore>
             </div>
+            <div className="klokje"></div>
         </div>
         <Button className="restart" onClick={props.advance}>Restart!</Button>
     </div>

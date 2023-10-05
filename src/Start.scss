@@ -9,7 +9,7 @@
   height: 100vh;
   
   .btn{
-    margin-top: 100px;
+    margin-top: 150px;
     background-image: url("/src/assets/finish/end-screen-button.png");
     background-position: 74%;
     background-size: 100%;
@@ -94,8 +94,8 @@
   height: 150px;
   background-size: contain;
   position: absolute;
-  top: 63vh;
-  left: 3.3vw;
+  top: 62.6vh;
+  left: 3.7vw;
   animation: rotating 5s infinite linear;
   animation-direction: reverse;
 }
@@ -119,7 +119,7 @@
   height: 104px;
   background-size: contain;
   position: absolute;
-  top: 75vh;
+  top: 72.2vh;
   left: 9.2vw;
   animation: rotating 3s infinite linear;
 }
