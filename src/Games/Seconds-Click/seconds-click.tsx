@@ -2,6 +2,7 @@ import {useState} from "react";
 import {Clock} from "./Clock.tsx";
 import './seconds-click.scss'
 import Button from "react-bootstrap/Button";
+import clockButton from "/src/assets/Clock game/clockButton.png";
 
 export function SecondsClick(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
     const [showStart, setShowStart] = useState(true);
@@ -81,7 +82,7 @@ export function SecondsClick(props: { advance: () => void, setScore: React.Dispa
 
                     <h4 className="result">{text}</h4>
 
-                    <img className="big-button" src="/src/assets/Clock game/clockButton.png" onMouseDown={buttonPress}></img>
+                    <img className="big-button" src={clockButton} onMouseDown={buttonPress}></img>
                 </div>
             </div>
         </>

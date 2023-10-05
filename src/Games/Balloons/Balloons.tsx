@@ -3,6 +3,7 @@ import './Balloons.scss'
 import {BalloonState} from "./BalloonState.ts";
 import {useEffect, useState} from "react";
 import Button from "react-bootstrap/Button";
+import uitleg from "/src/assets/Amimal/uitleg.png";
 
 export function Balloons(props: { advance: () => void, setScore: React.Dispatch<React.SetStateAction<number>> }) {
     const [showStart, setShowStart] = useState(true);
@@ -65,7 +66,7 @@ export function Balloons(props: { advance: () => void, setScore: React.Dispatch<
     return (
         <>
             <div className="animal-game-screen__BG">
-                <img src="/src/assets/Amimal/uitleg.png" className="intro"/>
+                <img src={uitleg} className="intro"/>
                 <div className="animal-game-screen__image">
                 <div className="balloons">
                     {balloons.map((b, i) => <Balloon index={i} key={i} state={b} onClick={() => balloonClicked(i)}/>)}

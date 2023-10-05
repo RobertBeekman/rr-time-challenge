@@ -12,10 +12,10 @@ export function Balloon(props: { index: number, state: BalloonState, onClick: ()
         return "text-danger";
     }
 
-    const resultClasses = `result ${getResultClass()}`
+    const resultClasses = `click-result ${getResultClass()}`
     return <div className={"animal animal_" + props.index} onClick={props.onClick}>
         {props.state.offset !== undefined && <div className="soup"/>}
-        <div className="result">
+        <div className="click-result">
             {props.state.revealed ? <span>{props.state.time} sec</span> : ''}
             {props.state.offset !== undefined && <span className={resultClasses}>{Math.round(props.state.offset ?? 0)} ms</span>}
         </div>
